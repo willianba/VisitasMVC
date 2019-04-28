@@ -24,10 +24,7 @@ namespace ApresentacaoVisitas.DB.Data
                 new Visitante{Nome="Laura", Sobrenome="Claro", Email="laura.claro@edu.pucrs.br"},
                 new Visitante{Nome="Gustavo", Sobrenome="Couto", Email="gustavo.couto@edu.pucrs.br"}
             };
-            foreach (var visitante in visitantes)
-            {
-                context.Visitantes.Add(visitante);
-            }
+            context.Visitantes.AddRange(visitantes);
             context.SaveChanges();
         }
 
