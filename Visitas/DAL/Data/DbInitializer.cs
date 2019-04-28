@@ -20,9 +20,8 @@ namespace ApresentacaoVisitas.DB.Data
             var visitantes = new Visitante[]
             {
                 new Visitante{Nome="Willian", Sobrenome="Alves", Email="willian.alves@edu.pucrs.br"},
-                new Visitante{Nome="Otávio", Sobrenome="Parraga", Email="otavio.parraga@edu.pucrs.br"},
-                new Visitante{Nome="Laura", Sobrenome="Claro", Email="laura.claro@edu.pucrs.br"},
-                new Visitante{Nome="Gustavo", Sobrenome="Couto", Email="gustavo.couto@edu.pucrs.br"}
+                new Visitante{Nome="Jorge", Sobrenome="Casagrande", Email="jorgecasagrande@ymail.com"},
+                new Visitante{Nome="Nego", Sobrenome="Nei", Email="negonei@bol.com"}
             };
             context.Visitantes.AddRange(visitantes);
             context.SaveChanges();
