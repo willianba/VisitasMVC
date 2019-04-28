@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ApresentacaoVisitas.Models.Visitante>
+
+@{
+    ViewBag.Title = "Lista de Visitantes";
+}
+
+<h2>Lista de Visitantes</h2>
+<p>
+    <a asp-action="Signup">Adicionar Visitante</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sobrenome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sobrenome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
