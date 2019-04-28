@@ -18,8 +18,8 @@ namespace Visitas
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<VisitasContext>();
-                    DbInitializer.Initialize(context);
+                    var context = new VisitasContext();
+                    DbInitializer.Initializer(context);
                 }
                 catch (Exception ex)
                 {

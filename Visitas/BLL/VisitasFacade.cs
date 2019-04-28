@@ -8,7 +8,7 @@ namespace ApresentacaoVisitas.BLL
 {
     public class VisitasFacade
     {
-        private VisitasDAOImpl dao = new VisitasDAOImpl();
+        private IVisitasDAO dao = new VisitasDAOImpl();
 
         private static class SingletonHolder
         {
@@ -19,13 +19,19 @@ namespace ApresentacaoVisitas.BLL
 
         public bool cadastrar(Visitante visitante)
         {
-            dao.add(visitante);
-            return true;
+            try
+            {
+                dao.add(visitante);
+                return true;
+            } catch (Exception)
+            {
+                return false;
+            }
         }
 
         public List<Visitante> buscarVisitantes()
         {
-            return dao.buscarTodosVisitantes();
+            return dao.buscarVisitantes();
         }
     }
 }

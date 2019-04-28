@@ -1,22 +1,23 @@
-﻿using ApresentacaoVisitas.Models;
-using System;
+﻿using ApresentacaoVisitas.DB.Data;
+using ApresentacaoVisitas.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ApresentacaoVisitas.BLL
 {
     public class VisitasDAOImpl: IVisitasDAO
     {
+        private VisitasContext context = new VisitasContext();
+
         public void add(Visitante visitante)
         {
-            // EF add into DB
+            context.Visitantes.Add(visitante);
+            context.SaveChanges();
         }
 
         public List<Visitante> buscarVisitantes()
-        {
-            // ef get from DB
-            return new List<Visitante>(1);
+        {    
+            return context.Visitantes.ToList();
         }
     }
 }

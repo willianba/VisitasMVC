@@ -1,4 +1,5 @@
 ﻿using ApresentacaoVisitas.BLL;
+using ApresentacaoVisitas.DB.Data;
 using ApresentacaoVisitas.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,13 +18,12 @@ namespace ApresentacaoVisitas.Controllers
         public IActionResult Signup(Visitante visitante)
         {
             visitasFachada.cadastrar(visitante);
-            return View();
+            return View("List");
         }
 
         public IActionResult List()
         {
-            visitasFachada.buscarVisitantes();
-            return View();
+            return View(visitasFachada.buscarVisitantes());
         }
     }
 }
