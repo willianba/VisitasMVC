@@ -17,8 +17,11 @@ namespace ApresentacaoVisitas.Controllers
         [HttpPost]
         public IActionResult Signup(Visitante visitante)
         {
-            visitasFachada.cadastrar(visitante);
-            return View("List");
+            if (visitasFachada.cadastrar(visitante))
+            {
+                return View("List", visitasFachada.buscarVisitantes());
+            }
+            return View();
         }
 
         public IActionResult List()
